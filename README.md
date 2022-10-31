@@ -11,18 +11,18 @@ Fleet car management - backend App
 
 - Java 11
 - SpringBoot
-    - JPA
-    - Lombok
+  - JPA
+  - Lombok
 - MySQL
 - Postman
 
 ### Starting App
 - Run the `docker-compose.yml` to start MySQL server at port 3306.
 - Build Web app with the command:
-    - `mvnw package`
+  - `mvnw package`
 - Run Web app with the command which will start Rest Api under port 8080:
-    - `java -jar target/Fleet-Car-Management-0.0.1-SNAPSHOT.jar`
-    - check URL at browser [http://localhost:8080/api/cars](http://localhost:8080/api/cars)
+  - `java -jar target/Fleet-Car-Management-0.0.1-SNAPSHOT.jar`
+  - check URL at browser [http://localhost:8080/api/cars](http://localhost:8080/api/cars)
 
 ### Testing API calls with Postman:
 
