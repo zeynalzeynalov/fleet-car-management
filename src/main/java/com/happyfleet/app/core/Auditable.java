@@ -19,7 +19,9 @@ import java.util.Date;
 public abstract class Auditable<T> {
 
     @Column(length = 10)
-    @JsonIgnore @CreatedBy protected T createdBy;
+    @JsonIgnore
+    @CreatedBy
+    protected T createdBy;
 
     @JsonIgnore
     @Temporal(TemporalType.TIMESTAMP)
@@ -27,7 +29,9 @@ public abstract class Auditable<T> {
     protected Date createdAt;
 
     @Column(length = 10)
-    @JsonIgnore @LastModifiedBy protected T lastModifiedBy;
+    @JsonIgnore
+    @LastModifiedBy
+    protected T lastModifiedBy;
 
     @JsonIgnore
     @Temporal(TemporalType.TIMESTAMP)
