@@ -3,7 +3,8 @@ package com.happyfleet.app.api.cars;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CarRepository extends CrudRepository<Car, Integer> {
-    List<Car> findByLicensePlate(String licensePlate);
+    Optional<Car> findByLicensePlate(String licensePlate);
 }
