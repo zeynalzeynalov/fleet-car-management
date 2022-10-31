@@ -8,12 +8,22 @@ import org.springframework.stereotype.Component;
 public class CarService {
     private final CarRepository repository;
 
-    public Car create(Car request) {
-        return repository.save(request);
+    // TODO: Implement caching
+    public Iterable<Car> getAll() {
+        return repository.findAll();
+    }
+
+    public Car getCar(int id) {
+        return repository.findById(id).orElseThrow();
     }
 
     public Iterable<Car> getByLicensePlate(String licensePlate) {
 
         return repository.findByLicensePlate(licensePlate);
+    }
+
+    // TODO: Implement cache eviction
+    public Car create(Car request) {
+        return repository.save(request);
     }
 }
