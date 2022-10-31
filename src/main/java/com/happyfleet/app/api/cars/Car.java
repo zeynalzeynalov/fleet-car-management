@@ -14,17 +14,17 @@ import javax.persistence.*;
         uniqueConstraints = {@UniqueConstraint(columnNames = "licensePlate")})
 public class Car extends AuditableWithId<String> {
 
-    @Column(nullable = false, length = 15)
+    @Column(nullable = false, length = 20)
     private String licensePlate;
 
     // TODO: following properties can be normalized as new table: brand, manufacturer, operationCity, status
-    @Column(nullable = false, length = 15)
+    @Column(nullable = false, length = 20)
     private String brand;
 
-    @Column(nullable = false, length = 15)
+    @Column(nullable = false, length = 50)
     private String manufacturer;
 
-    @Column(nullable = false, length = 15)
+    @Column(nullable = false, length = 20)
     private String operationCity;
 
     @Enumerated(EnumType.STRING)
