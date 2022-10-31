@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 @RequestMapping("/api/cars")
@@ -24,10 +23,9 @@ public class CarController {
     @RequestMapping(value = "/{id}")
     public ResponseEntity<RestResponse> getCar(@PathVariable int id) {
         Optional<Car> car = service.getCar(id);
-        if(car.isPresent()) {
+        if (car.isPresent()) {
             return ResponseEntity.ok(new RestResponse(car.get()));
-        }
-        else {
+        } else {
             return ResponseEntity.badRequest().body(new RestResponse("Car not found"));
         }
     }
@@ -36,10 +34,9 @@ public class CarController {
     public ResponseEntity<RestResponse> getByLicensePlate(@PathVariable String licensePlateId) {
 
         Optional<Car> car = service.getByLicensePlate(licensePlateId);
-        if(car.isPresent()) {
+        if (car.isPresent()) {
             return ResponseEntity.ok(new RestResponse(car.get()));
-        }
-        else {
+        } else {
             return ResponseEntity.badRequest().body(new RestResponse("Car not found with licensePlateId" + licensePlateId));
         }
     }
