@@ -19,7 +19,7 @@ public class CarService {
         return repository.findById(id);
     }
 
-    public Iterable<Car> getByLicensePlate(String licensePlate) {
+    public Optional<Car> getByLicensePlate(String licensePlate) {
 
         return repository.findByLicensePlate(licensePlate);
     }
