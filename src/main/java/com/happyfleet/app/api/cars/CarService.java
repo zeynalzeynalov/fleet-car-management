@@ -3,6 +3,8 @@ package com.happyfleet.app.api.cars;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 public class CarService {
@@ -13,8 +15,8 @@ public class CarService {
         return repository.findAll();
     }
 
-    public Car getCar(int id) {
-        return repository.findById(id).orElseThrow();
+    public Optional<Car> getCar(int id) {
+        return repository.findById(id);
     }
 
     public Iterable<Car> getByLicensePlate(String licensePlate) {
