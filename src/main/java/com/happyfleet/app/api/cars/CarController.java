@@ -35,7 +35,13 @@ public class CarController {
     @RequestMapping(value = "/licenseplate/{licensePlateId}")
     public ResponseEntity<RestResponse> getByLicensePlate(@PathVariable String licensePlateId) {
 
-        return ResponseEntity.ok(new RestResponse(service.getByLicensePlate(licensePlateId)));
+        Optional<Car> car = service.getByLicensePlate(licensePlateId);
+        if(car.isPresent()) {
+            return ResponseEntity.ok(new RestResponse(car.get()));
+        }
+        else {
+            return ResponseEntity.badRequest().body(new RestResponse("Car not found with licensePlateId" + licensePlateId));
+        }
     }
 
     // TODO: Implement additional CarCreateRequest.java data transfer class
