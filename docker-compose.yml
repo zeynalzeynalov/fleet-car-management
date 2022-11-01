@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  db:
+    # My PC is MacBook [M1 Chip] so using following platform
+    platform: linux/x86_64
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db_fleet'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'userPass'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'rootPass'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
