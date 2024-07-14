@@ -19,6 +19,12 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      DB_DATABASE: db_fleet
+      DB_USER: user
+      DB_PASSWORD: userPass
+      MYSQL_ROOT_PASSWORD: rootPass
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -27,6 +33,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Start MySQL
+      run: |
+          sudo /etc/init.d/mysql start
+          mysql -e "CREATE DATABASE IF NOT EXISTS $DB_DATABASE;" -u$DB_USER -p$DB_PASSWORD
+          
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
