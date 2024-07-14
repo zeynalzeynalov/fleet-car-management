@@ -1,9 +1,8 @@
-version: '3.3'
 services:
   db:
     # My PC is MacBook [M1 Chip] so using following platform
     platform: linux/x86_64
-    image: mysql:5.7
+    image: mysql
     restart: always
     environment:
       MYSQL_DATABASE: 'db_fleet'
