@@ -14,7 +14,6 @@ Fleet car management - backend App
   - JPA
   - Lombok
 - MySQL
-- Postman
 
 ### Starting App
 - Run the `docker-compose.yml` to start MySQL server at port 3306.
