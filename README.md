@@ -9,10 +9,10 @@ Fleet car management - backend App
   `
 ### Tech stack:
 
-- Java 11
+- Java
 - SpringBoot
   - JPA
-  - Lombok
+- Lombok
 - MySQL
 
 ### Starting App
